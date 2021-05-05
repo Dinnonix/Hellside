@@ -20,7 +20,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Hellside"
+config/name="Omen"
 config/icon="res://icon.png"
 
 [rendering]
