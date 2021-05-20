@@ -16,8 +16,8 @@ func _physics_process(delta):
 	velocity.y += gravity * delta
 	  
 	velocity = move_and_slide(velocity, UP, SLOPE_STOP)
-
 	is_grounded = _check_is_grounded()
+	
 
 func _input(event):
 	if event.is_action_pressed("jump") && is_grounded: 
@@ -36,6 +36,7 @@ func _check_is_grounded():
 	for raycast in raycasts.get_children():
 		if raycast.is_colliding():
 			return true
+
 
 #func _assign_animation():
 #	var anim = "idle"

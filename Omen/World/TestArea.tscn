@@ -1,6 +1,7 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Bonus Sprites/Environment/tileset-sliced.png" type="Texture" id=1]
+[ext_resource path="res://Player/Reaper/Player/PlayerReaper.tscn" type="PackedScene" id=2]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -361,11 +362,43 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 6/shape_one_way_margin = 0.0
 6/shapes = [  ]
 6/z_index = 0
+7/name = "full_slope_2"
+7/texture = ExtResource( 1 )
+7/tex_offset = Vector2( 0, 0 )
+7/modulate = Color( 1, 1, 1, 1 )
+7/region = Rect2( 304, 16, 96, 48 )
+7/tile_mode = 2
+7/autotile/icon_coordinate = Vector2( 0, 0 )
+7/autotile/tile_size = Vector2( 32, 32 )
+7/autotile/spacing = 0
+7/autotile/occluder_map = [  ]
+7/autotile/navpoly_map = [  ]
+7/autotile/priority_map = [  ]
+7/autotile/z_index_map = [  ]
+7/occluder_offset = Vector2( 0, 0 )
+7/navigation_offset = Vector2( 0, 0 )
+7/shape_offset = Vector2( 0, 0 )
+7/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+7/shape_one_way = false
+7/shape_one_way_margin = 0.0
+7/shapes = [  ]
+7/z_index = 0
 
 [node name="Node2D" type="Node2D"]
+
+[node name="PlayerReaper" parent="." instance=ExtResource( 2 )]
+position = Vector2( -136, -56 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 24 )
 cell_size = Vector2( 16, 16 )
+show_collision = true
+cell_clip_uv = true
+collision_layer = 3
 format = 1
-tile_data = PoolIntArray( -393215, 4, 0, -327679, 2, 0, -327678, 2, 1, -262143, 2, 65536, -262142, 2, 65537, -196607, 3, 0, -196606, 3, 1, -131071, 3, 65536, -131070, 3, 65537, -10, 4, 65536, -9, 4, 65536, -8, 4, 65536, -7, 4, 65536, -6, 4, 65536, -5, 4, 65536, -4, 4, 65536, -3, 4, 65536, -2, 4, 65536, -1, 4, 65540, -65536, 4, 65540, -65535, 4, 65536, -65534, 4, 65537, -65533, 4, 65540, -65532, 4, 65540, -65531, 4, 65536, -65530, 4, 65536, -65529, 4, 65536, -65528, 4, 65536, -65527, 4, 65536, -65526, 4, 65536, -65525, 4, 65536, -65524, 4, 65536, -65523, 4, 65536, -65522, 4, 65536, -65521, 4, 65536, 65526, 4, 131073, 65527, 4, 131072, 65528, 4, 131073, 65529, 4, 131072, 65530, 4, 131073, 65531, 4, 131072, 65532, 4, 131073, 65533, 4, 131072, 65534, 4, 131073, 65535, 4, 131076, 0, 4, 131076, 1, 4, 131073, 2, 4, 131073, 3, 4, 131076, 4, 4, 131076, 5, 4, 131073, 6, 4, 131072, 7, 4, 131073, 8, 4, 131072, 9, 4, 131073, 10, 4, 131072, 11, 4, 131073, 12, 4, 131072, 13, 4, 131073, 14, 4, 131072, 15, 4, 131073 )
+tile_data = PoolIntArray( -393215, 4, 0, -327679, 2, 0, -327678, 2, 1, -262143, 2, 65536, -262142, 2, 65537, -196607, 3, 0, -196606, 3, 1, -131071, 3, 65536, -131070, 3, 65537, -12, 0, 0, -11, 0, 1, -10, 4, 65536, -9, 4, 65536, -8, 4, 65536, -7, 4, 65536, -6, 4, 65536, -5, 4, 65536, -4, 4, 65536, -3, 4, 65536, -2, 4, 65540, -1, 4, 65540, -65536, 4, 65540, -65535, 4, 65536, -65534, 4, 65537, -65533, 4, 65540, -65532, 4, 65540, -65531, 4, 65540, -65530, 4, 65536, -65529, 4, 65536, -65528, 4, 65536, -65527, 4, 65536, -65526, 4, 65536, -65525, 4, 65536, -65524, 4, 65536, -65523, 4, 65536, -65522, 4, 65536, -65521, 4, 65536, -65520, 1, 0, -65519, 1, 1, 65524, 0, 65536, 65525, 0, 65537, 65526, 4, 131073, 65527, 4, 131072, 65528, 4, 131073, 65529, 4, 131072, 65530, 4, 131073, 65531, 4, 131072, 65532, 4, 131073, 65533, 4, 131072, 65534, 4, 131076, 65535, 4, 131076, 0, 4, 131076, 1, 4, 131073, 2, 4, 131073, 3, 4, 131076, 4, 4, 131076, 5, 4, 131076, 6, 4, 131072, 7, 4, 131073, 8, 4, 131072, 9, 4, 131073, 10, 4, 131072, 11, 4, 131073, 12, 4, 131072, 13, 4, 131073, 14, 4, 131072, 15, 4, 131073, 16, 1, 65536, 17, 1, 65537 )
